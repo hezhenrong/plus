@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body style="font-size: 20px;">
+		<div class="zr_main">
+			<div class="zr_title" style="color: red;">
+				数学测试-加法
+			</div>
+			<div class="zr_contain">
+				<p><span id="zr_a" style="color: red;">a</span>+<span id="zr_b" style="color: red;">b</span>=<span class="zr_wenhao" style="color: red;">??</span></p>
+				<input id="zr_input"/>
+				<button id="zr_submit" onclick="whether_right()">提交</button>
+			</div>
+			<br />
+			<div class="zr_foot" id="zr_result" style="color: red;">
+				 
+			</div>
+			<br />
+			<button class="zr_refresh" onclick="refresh()">下一题</button>
+		</div>
+		
+		<script type="text/javascript">
+			var zr_a=document.getElementById("zr_a");
+			console.log(zr_a);
+			var zr_rand_a=Math.floor(Math.random()*10);
+			zr_a.innerHTML=zr_rand_a;
+			
+			var zr_b=document.getElementById("zr_b");
+			console.log(zr_b);
+			var zr_rand_b=Math.floor(Math.random()*10);
+			zr_b.innerHTML=zr_rand_b;
+			
+			var zr_input=document.getElementById("zr_input");
+//			console.log(zr_input);
+			var zr_submit=document.getElementById("zr_submit");
+			console.log(zr_submit);
+			var zr_right=zr_rand_a+zr_rand_b;
+			console.log(zr_right);
+			
+			var zr_result=document.getElementById("zr_result");
+			console.log(zr_result);
+			
+			function whether_right(){
+				
+				if(zr_input.value!=zr_right){
+					zr_result.innerHTML="回答错误!! "+zr_rand_a+"+"+zr_rand_b+"="+zr_right;
+				}
+				else(
+					zr_result.innerHTML="回答正确!! "
+				)
+				console.log(zr_input.value);
+			}
+			
+			function refresh(){
+				window.location.reload();
+			}
+		</script>
+	</body>
+</html>
